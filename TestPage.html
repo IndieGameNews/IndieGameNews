@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, cyan 60%, blue);
+        }
+
+        .container {
+            position: relative;
+            width: 80%;
+            height: 80%;
+            background: linear-gradient(to bottom, blue 60%, rgba(0,0,255,0));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.5s ease;
+            padding: 20px;
+            user-select: text;
+        }
+
+        .title {
+            font-size: 32px;
+            color: white;
+            margin-top: 0;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .text-container {
+            width: 100%;
+            height: calc(100% - 60px);
+            overflow-y: auto;
+            padding: 20px;
+            font-size: 24px;
+            color: white;
+            background-color: transparent;
+            z-index: 1;
+            border: none;
+        }
+
+        .text-container p {
+            margin-bottom: 20px;
+        }
+
+        .text-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .text-container::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        .text-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="title">News Article</div>
+        <div class="text-container">
+            <p>Here is some sample text that will go inside the scrollable box. You can add as much text as you'd like here to test the scrolling functionality. The box itself is invisible but the content and scrollbar will still be functional.</p>
+            <p>Another paragraph with more content to demonstrate scrolling. You can add multiple paragraphs, and the text will scroll smoothly within the container.</p>
+            <p>Keep adding text to see how the scrollbar appears and lets you scroll through the content. This behavior will allow for easy reading of large amounts of text in a constrained space without the need for resizing the entire page.</p>
+            <p>Final paragraph to fill up the space and demonstrate that the text scrolls properly within the invisible box. The text here is a bit longer to simulate more content. Scroll down to see more!</p>
+        </div>
+    </div>
+
+    <script>
+        const container = document.getElementById('container');
+        let animationFrameId = null;
+
+        container.addEventListener('mousemove', (e) => {
+            const width = container.offsetWidth;
+            const mouseX = e.clientX - container.offsetLeft;
+            const threshold = width * 0.01;
+
+            if (mouseX < threshold) {
+                container.style.background = `linear-gradient(90deg, white, #33ccff)`;
+            } else if (mouseX > width - threshold) {
+                container.style.background = `linear-gradient(90deg, #33ccff, white)`;
+            } else {
+				//container.style.background = `linear-gradient(to bottom, lime, lime)`;
+                container.style.background = `linear-gradient(to bottom, blue 60%, rgba(0,0,32,32))`;
+            }
+        });
+
+        container.addEventListener('mouseenter', (e) => {
+            const width = container.offsetWidth;
+            const mouseX = e.clientX - container.offsetLeft;
+            const threshold = width * 0.01;
+			
+			container.style.background = `linear-gradient(to bottom, lime, lime)`;
+            if (mouseX < threshold) {
+                container.style.background = `linear-gradient(90deg, white, #33ccff)`;
+            } else if (mouseX > width - threshold) {
+                container.style.background = `linear-gradient(90deg, #33ccff, white)`;
+            } else {
+				//container.style.background = `linear-gradient(to bottom, lime, lime)`;
+                container.style.background = `linear-gradient(to bottom, blue 60%, rgba(0,0,32,32))`;
+            }
+        });
+
+        container.addEventListener('mouseleave', () => {
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
+            fadeToDefault();
+        });
+
+        function fadeToDefault() {
+            const duration = 1000;
+            const start = Date.now();
+            const initial = getComputedStyle(container).background;
+
+            function interpolateColor(color1, color2, factor) {
+                const result = color1.slice();
+                for (let i = 0; i < 3; i++) {
+                    result[i] = Math.round(result[i] + factor * (color2[i] - color1[i]));
+                }
+                return result;
+            }
+
+            function parseColor(input) {
+                const div = document.createElement('div');
+                div.style.backgroundColor = input;
+                document.body.appendChild(div);
+                const computedColor = getComputedStyle(div).backgroundColor;
+                document.body.removeChild(div);
+
+                const match = computedColor.match(/rgba?\((\d+), (\d+), (\d+)(, [\d.]+)?\)/);
+                if (match) {
+                    return [parseInt(match[1]), parseInt(match[2]), parseInt(match[3])];
+                }
+                return [0, 0, 0];
+            }
+
+            function animate() {
+                const currentTime = Date.now();
+                const elapsed = currentTime - start;
+                const factor = Math.min(elapsed / duration, 1);
+                const startColor = parseColor(initial);
+                const endColor = parseColor(`rgba(0, 0, 255, 0)`); // Target end color
+                const currentColor = interpolateColor(startColor, endColor, factor);
+                container.style.background = `linear-gradient(to bottom, blue 60%, rgba(${currentColor[0]}, ${currentColor[1]}, ${currentColor[2]}, ${1 - factor}))`;
+
+                if (factor < 1) {
+                    animationFrameId = requestAnimationFrame(animate);
+                }
+            }
+            animate();
+        }
+    </script>
+</body>
+</html>
