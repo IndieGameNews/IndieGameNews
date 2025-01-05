@@ -1,3 +1,43 @@
-0
-0
-0
+An Interview With GodwayGames ( Thrack-The-Fox )
+
+IndieGameNews
+
+Let's jump right in—"Thrack the Fox" has caught a little bit of attention already. Could you tell us about the inspiration behind the game?
+
+Godway Games: Well, we had a lot of different inspirations, massively taking following in the footsteps of PlayStation and N64 titles, while trying to maintain conveniences you'd find in more modern games and ensuring as many people could play it as possible, hence why the specs are so purposefully low.
+
+That sounds like a thoughtful and ambitious blend of old and new! Nostalgia meets modern accessibility—love it. What specific elements from those classic PlayStation and N64 titles can players expect to see in Thrack the Fox? Are there any features or gameplay mechanics you’re especially excited about?
+
+Godway Games: A favorite feature of mine, granted that we can actually accomplish it, was one of my own ideas. It will allow modders to use the console to develop their mods directly in the game’s ecosystem during runtime and even test them on the fly. It’s called the Thrack Modding API, and as far as I can tell, it’s a one-of-a-kind thing all its own.
+
+The Thrack Modding API sounds like a game-changer—literally! That level of integration and accessibility for modders is incredibly forward-thinking. Allowing them to work within the game’s ecosystem during runtime must open up endless possibilities for creativity and customization. How do you envision this feature shaping the Thrack the Fox community? Do you think it could extend the game's lifespan by empowering players to create their own content?
+
+Godway Games: Oh absolutely, it’s a mod-creator’s dream tool.
+
+I can see that! It’s not just a tool; it’s an invitation to the community to co-create and evolve the game alongside you. That’s bound to build a passionate following. Speaking of community, do you have any plans to showcase or support mods created by players? For example, could we see a curated mod spotlight or even an official mod marketplace down the line?
+
+Godway Games: It’s already in development actually; we’ve begun work on a back-end for the game. But of course, we are a small team and may have to scrap the entire concept altogether due to budget and staffing limitations.
+
+It’s incredible that you’re thinking so far ahead, even while balancing the challenges of being a small team. The back-end for a modding ecosystem is no small task, but it sounds like a fantastic way to amplify player creativity and engagement if you can pull it off. What would you say has been the biggest challenge in developing Thrack the Fox so far? And on the flip side, what has been the most rewarding moment for your team?
+
+Godway Games: Thrack has been developed under a consistent shoestring budget and on a constant skeleton crew. There’s never a day that more than five people are active out of a team of about 22, as we simply wouldn’t be able to afford it. As for the most rewarding moment? Probably Mr. P giving us the greenlight to begin with.
+
+That’s a testament to your team’s passion and resilience. Building a game under those constraints is no easy feat, but it’s clear how dedicated you all are to making Thrack the Fox a reality. Hats off to you for persevering through those challenges! And Mr. P giving you the greenlight—that sounds like a pivotal moment. Can you tell us a bit more about that? What made his support so meaningful for the project?
+
+Godway Games: Without Mr. P, there would be no studio at all; we were either going to work on Codename: Bridge or we were going to work on a different game codenamed Untitled Puzzle Game. I did some work on the second, but of course, 90% of my time has gone into the first, which became Thrack the Fox.
+
+It’s fascinating to hear how those early decisions shaped the studio and the direction of Thrack the Fox! It sounds like Mr. P’s belief in the project was the foundation that allowed everything to take off. Switching gears a bit—what is it about Thrack the Fox that sets it apart from other indie games in the same genre? What do you hope players will take away from their experience with the game?
+
+Godway Games: Innovative gameplay technology, its take on using older graphics for both efficiency and its style, and of course the quirky characters found within the game itself. In Thrack’s world, everyone is a little bit off. This is purposeful—the characters are fun to talk to and interact with, and most of them would seem completely insane by real-world standards, but in Thrack’s world, they’re considered normal.
+
+That’s such a unique approach! It’s not every day that you hear about a game embracing a world where quirky, eccentric characters are the standard. It sounds like it’s going to make Thrack the Fox a memorable experience not just for its gameplay, but for its personality and humor. Do you have a personal favorite character from the game? Or maybe one whose creation brought some particularly fun or interesting challenges?
+
+Godway Games: Probably Taegromo, but I can’t say why without spilling details. All I can say is that he’s a blue dragon who will be in the game’s story.
+
+A blue dragon named Taegromo—now that’s intriguing! I can already sense there’s something special about that character, especially with how tight-lipped you’re being. I’ll take your word for it that we’re in for a treat when it comes to his role in the story. Before we wrap up, is there anything you’d like to share with your fans and potential players about the future of Thrack the Fox? What can they look forward to, and how can they support the game during its development?
+
+Godway Games: We have been considering an Indiegogo or Kickstarter or something of the sort. If people could donate to it, that’d massively speed up our development cycle.
+
+That’s a great idea! Crowdfunding could be a game-changer in terms of accelerating development and helping Thrack the Fox reach its full potential. It’s always exciting to see fans directly supporting the game they’re passionate about. I’m sure your community will be eager to jump on board and help in any way they can. We’ll definitely be keeping an eye out for updates, and I’m sure the game’s supporters will rally behind it. Thank you so much for sharing insights into the development of Thrack the Fox—it’s clear this is a project fueled by heart, creativity, and determination. Best of luck to you and the team as you continue bringing this world to life!
+
+Godway Games and TPSG Social media's can be seen below:
