@@ -1,0 +1,134 @@
+An Interview with Developer 77Lucky7
+
+LuckyBrawl. It's a 2D shooter game where you can gain points to unlock unique and diverse characters, 
+new environments, new gamemodes, and environment-exclusive gamemodes,
+and has map settings. It's available on PC, web, and mobile.
+Below is an interview between me and 77Lucky7 himself.
+
+1.) Can you explain the mechanics behind the X-Points system for unlocking characters and environments? What was your thought process in designing this progression system?
+
+X-Points can be gained by winning battles. Once you reach certain thresholds, you will unlock characters and environments. 
+The number of X-Points required are specified on the locked character's icon or environment button. 
+I wanted to make this progression system a way for players to diversify their experience while playing the game, 
+while also being curious about what they may unlock next in the game.
+
+2.) What are your plans for future updates or expansions for "LuckyBrawl"?
+
+For future updates, I plan to add more characters and game modes. 
+I may also add limited-time characters and/or game modes by having an update available for a week (for example) before locking the character.
+I also plan to add more lore behind all of the characters, since I like the idea of having players connect with the characters, like them, and/or potentially relate to them.
+I could add other ideas based on feedback, and I want to make sure that the features I add have some kind of purpose and make the game more interesting.
+
+3.) Are there any new features or game modes you're excited to introduce in future updates?
+
+Yes, there are new features and game modes that I'm excited to introduce in future updates.
+
+4.) What sets LuckyBrawl apart from other games 2d web shooter games?
+
+LuckyBrawl is special because there are unique characters and environments that are both familiar and unfamiliar. 
+The location for an environment may be familiar,
+but the dynamics of the characters to belong to it along with the exclusive game modes that belong to those environments add the style that makes it all unique.
+LuckyBrawl is also special because of its map settings, which gives the players the choice of how they can play the game. Players can choose the number of teams,
+teammates, length of a game round, and a range for minimum and maximum map sizes that the map's size for a round will be within.
+
+5.) You mentioned before this interview that your player base was struggling, why do you believe that is?
+
+I believe that my player base is struggling because I have only gotten a few comments on the game and only about 30 views total. 
+It has only been 3 days since the game has released, and I'm not sure if the game will be able to grow without consistently posting about it on social media. 
+I do understand that the game might need more time to get popular, and I hope that it does get more popular soon so that I can have more feedback and ideas to work with. 
+I like seeing others' ideas and being inspired by them.
+
+6.) It's quite difficult to get a game to function on so many different devices, how were you able to accomplish this?
+
+I was able to make LuckyBrawl able to function on different devices by using the tools Unity has. 
+Unity has tools which make my game able to function on PC, web, and mobile. 
+Besides that, I also used Unity's pivot and anchoring system to make my UI elements able to fit on a variety of different sizes. 
+It took several tries to get the UI elements on each screen working without being cut off, stretched incorrectly, or off-screen.
+
+7.) I noticed LuckyBrawl was published back on August 27th of 2023, yet it was updated a mere 2 days ago.
+why have you continued to maintain it if as you'd stated it had such a small player base?
+
+Actually, the game itself was published on January 1st, 2025.
+August 27th, 2023 may be referring to the game mod it used to be, and I was inspired to turn it into a full game instead so that I can have more freedom with making the kind of game I want to make. 
+As I developed it, it did have a small player base, 
+and I believed that I could make it get more popular if I actually started to release a version for everyone to play and start promoting it on social media.
+
+8.) why don't X points dispaly during battle's?
+
+X-Points do not display during battles since there aren't any game modes which involve gaining X-Points in the middle of a battle, and I think it may block the player's field of view a little bit.
+
+9.) As far as I can see LuckyBrawl is the only game you've published if this is true do you have plans for any future titles?
+
+As of right now, I do not have any plans for future titles. I do hope I can make future ones though, or at the very least, continue updating LuckyBrawl and make it the best game it could be.
+
+10.) How has your experience as a game developer evolved while working on "LuckyBrawl"?
+
+While working on LuckyBrawl, I was quite clueless on where to start. However, using AI has helped me figure out how to make everything work. 
+I already knew how to make graphical assets, music, and sound effects based on previous experience. 
+On the first month of working on LuckyBrawl (September to October 2024), I was able to mostly develop the game successfully. 
+However, what messed my progress up is that I had to revamp the entire team system since I had not originally designed the game with mechanics to handle multiple teams with multiple teammates and enemies. 
+I kept running into a lot of bugs when adding these mechanics despite having different ideas of how to fix them, and I had decided to quit making the game for a month due to a lack of motivation and time. 
+However, a month later (in November), I had found enough time and motivation to continue making the game, but that time, I had an idea that I believed could potentially work. 
+I decided to make a new Unity game from scratch while keeping the original, broken version of the game. I used AI and my ideas to code everything from scratch, trying to be as specific as possible with what I wanted and what I needed in order to make it work. 
+This clean, unbugged version of the game ended up being a prototype for the game mode players start off with. Then, I decided that it was time to start merging the two versions together. 
+I removed the old system and ended up successfully replacing it with the new system. From there, it was a matter of doing research and learning from the AI about how I could add all of the features that the game currently has. 
+I experienced many bugs along the way, but now, I feel comfortable and confident in my ability to make new in-game content and features.
+
+11.) LuckyBrawl is available for free on itch.io, What incentivizes your development?
+
+What incentivizes me to create LuckyBrawl was my inspiration from other games, 
+the potential ideas that I could add to my game that the other games didn't already have, 
+and the potential things I could do with the game if it had an active community. If the game had an active community, 
+I could do things such as creating polls to vote on things for future in-game content and creating characters and game modes based on the community's ideas. 
+I was also incentivized by the potential money I could make by making a likable and versatile game. 
+There was supposed to be a shop where players could buy X-Points to unlock later in-game content so that I could get money and not have to get a regular job, 
+though I didn't think the feature would have a purpose without enough players playing my game. 
+I do plan to add the shop if the game gets popular enough.
+
+
+12.)Have you considered implementing multiplayer features or community events in LuckyBrawl? If so, what would they look like?
+
+I have considered adding multiplayer features in LuckyBrawl, 
+but I decided not to add them for now since game servers can cost money. 
+I have also considered adding community events. If the game gets a bigger community, 
+community events would likely revolve around some kind of challenge in order to unlock exclusive rewards, 
+though I would need to think more about how exactly the system would work once the game does get a bigger community.
+
+13.) What inspired you to enter game development?
+
+What inspired me to enter game development is that there are always viral games that people on the internet and in real life are talking about. 
+I see games as a way to provide a uniquely styled experience to players, 
+and I believe that I could make a game without or with less flaws compared to other games. 
+Going viral has a lot of potential, and by making a good, promising game, I believe it can definitely be possible.
+
+14.)What tools or game engines did you use to develop "LuckyBrawl", and why did you choose them?
+
+I used Scratch (www.scratch.mit.edu) to create the art and sounds.
+I found it quite interesting how using a millisecond of random sounds and copying, pasting, speeding up, slowing down, and using other effects could somehow lead to the creation of new and interesting sounds. 
+I chose to use Scratch for these things because I had used it for a couple of years in the past before,
+ and it served as a starting point for making games since it teaches the fundamentals for doing so.
+ It also inspired me to move onto more advanced engines. I chose Unity since it is a popular and versatile game engine,
+ and I've seen a game that uses Unity go viral before.
+
+15.) I noticed you have a discord, what does your playerbase/community mean to you?
+
+My community is a way for me to make my game better, while also allowing me to potentially connect with people with similar interests. 
+I also view my community as a source of ideas and inspiration and a means of interaction that allows me to make my game interactive and interesting.
+
+16.) How can other people support your continued future development and career?
+
+People can support my future development and career by following/joining/subscribing to me on social media, leaving comments, and using the in-game shop I plan to add in the future so that I can consider game development a viable career.
+I like the idea of making my ideas come to life in a new, fun, interesting, and engaging way, and I don't want all my effort to go to waste.
+
+you can see 77Lucky7's social media's below:
+
+YouTube: https://www.youtube.com/@77lucky77
+
+TikTok:
+https://www.tiktok.com/@77lucky7_gd
+
+Reddit:
+https://www.reddit.com/user/77LuckyLucky7/
+
+Discord Server:
+https://discord.com/invite/76qr6J4jgF
