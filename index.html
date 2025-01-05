@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to bottom, cyan 60%, blue);
+        }
+
+        .container {
+            position: relative;
+            width: 80%;
+            height: 80%;
+            background: linear-gradient(to bottom, blue 60%, rgba(0,0,255,0));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.5s ease;
+            padding: 20px;
+            user-select: text;
+        }
+
+        .title {
+            font-size: 32px;
+            color: white;
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .attribution {
+            font-size: 16px;
+            color: lightgray;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .text-container {
+            width: 100%;
+            height: calc(100% - 100px);
+            overflow-y: auto;
+            padding: 20px;
+            font-size: 24px;
+            color: rgba(255,255,32,128);
+            background-color: transparent;
+            z-index: 1;
+            border: none;
+        }
+
+        .text-container p {
+            margin-bottom: 20px;
+        }
+
+        .text-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .text-container::-webkit-scrollbar-thumb {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        .text-container::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        /* Popup styling */
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: blue;
+            color: white;
+            padding: 20px 30px;
+            border-radius: 10px;
+            font-size: 20px;
+            text-align: center;
+            z-index: 1000;
+            display: none;
+        }
+
+        .popup.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="title" id="title">Loading...</div>
+        <div class="attribution" id="attribution"></div>
+        <div class="text-container" id="text-container">
+            <!-- Content will be dynamically loaded -->
+        </div>
+    </div>
+
+    <div class="popup" id="popup">Article not found</div>
+
+    <script>
+        const container = document.getElementById('container');
+        const titleElement = document.getElementById('title');
+        const attributionElement = document.getElementById('attribution');
+        const textContainer = document.getElementById('text-container');
+        const popup = document.getElementById('popup');
+		var BoolGrads = true;
+		var LastFetched = '';
+        var currentRepoIndex = 0; // Track the current article index
+        let animationFrameId = null;
+
+        // Fetch and populate content
+        async function loadContent(index) {
+            const url = `https://raw.githubusercontent.com/IndieGameNews/IndieGameNews/refs/heads/main/${index}.txt`;
+            if (BoolGrads){
+				try {
+					const response = await fetch(url);
+					if (!response.ok) throw new Error('Failed to fetch content');
+					const text = await response.text();
+					const lines = text.split('\n').filter(line => line.trim() !== '');
+					
+					
+						// Clear previous content
+						titleElement.textContent = 'Loading...';
+						attributionElement.textContent = '';
+						textContainer.innerHTML = '';
+						
+						// Populate title
+						if (lines.length > 0) {
+							titleElement.textContent = lines[0];
+						}
+		
+						// Populate attribution
+						if (lines.length > 1) {
+							attributionElement.textContent = lines[1];
+						}
+		
+						// Populate text content
+						lines.slice(2).forEach(paragraph => {
+							const p = document.createElement('p');
+							p.textContent = paragraph;
+							textContainer.appendChild(p);
+						});
+						LastFetched = url;
+						//
+					//}
+				} catch (error) {
+					showPopup('Article not found');
+					console.error(error);
+					currentRepoIndex -= 1;
+					//ResetUrlPoint();
+				}
+				
+			}
+        }
+		
+		function ResetUrlPoint(){
+			//currentRepoIndex = 0;
+			const regex = /\/([^/]+)\.txt/;
+			const match = LastFetched.match(regex);
+			return match ? match[1] : 0; // Return the matched part or null if not found
+		}
+		
+        // Call the function to load the initial content
+        loadContent(currentRepoIndex);
+
+        // Handle left/right clicks
+        container.addEventListener('click', (e) => {
+            const width = container.offsetWidth;
+            const mouseX = e.clientX - container.offsetLeft;
+
+            if (mouseX < width / 2) {
+                // Left click (decrement index)
+                if (currentRepoIndex > 0) {
+                    currentRepoIndex--;
+                    loadContent(currentRepoIndex);
+                }
+            } else {
+                // Right click (increment index)
+                currentRepoIndex++;
+                loadContent(currentRepoIndex);
+            }
+        });
+
+        container.addEventListener('mousemove', (e) => {
+            const width = container.offsetWidth;
+            const mouseX = e.clientX - container.offsetLeft;
+            const threshold = width * 0.01;
+
+            if (mouseX < threshold) {
+                container.style.background = `linear-gradient(90deg, white, #33ccff)`;
+				BoolGrads = true;
+				//ResetUrlPoint();
+            } else if (mouseX > width - threshold) {
+                container.style.background = `linear-gradient(90deg, #33ccff, white)`;
+				BoolGrads = true;
+				//ResetUrlPoint()
+            } else {
+                container.style.background = `linear-gradient(to bottom, blue 60%, rgba(0,0,32,32))`;
+				BoolGrads = false;				
+				//ResetUrlPoint();
+            }
+        });
+
+        container.addEventListener('mouseenter', (e) => {
+            container.style.background = `linear-gradient(to bottom, lime, lime)`;
+        });
+
+        container.addEventListener('mouseleave', () => {
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+            }
+            fadeToDefault();
+        });
+
+        function fadeToDefault() {
+            const duration = 1000;
+            const start = Date.now();
+
+            function animate() {
+                const currentTime = Date.now();
+                const elapsed = currentTime - start;
+                const factor = Math.min(elapsed / duration, 1);
+                const endColor = `linear-gradient(to bottom, blue 60%, rgba(0,0,255,0))`;
+                container.style.background = endColor;
+
+                if (factor < 1) {
+                    animationFrameId = requestAnimationFrame(animate);
+                }
+            }
+            animate();
+        }
+
+        // Show popup with message
+        function showPopup(message) {
+            popup.textContent = message;
+            popup.classList.add('show');
+            setTimeout(() => {
+                popup.classList.remove('show');
+            }, 3000); // Hide popup after 3 seconds
+        }
+    </script>
+</body>
+</html>
