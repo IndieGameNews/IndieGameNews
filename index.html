@@ -97,19 +97,64 @@
         .popup.show {
             display: block;
         }
+		
+.topbar {
+    display: flex;
+    align-items: center; /* Vertically centers items */
+    justify-content: center; /* Horizontally centers items */
+    position: fixed; /* Sticks the top bar at the top */
+    top: 0; /* Ensure it's at the very top */
+    left: 0; /* Ensure it spans from the left edge */
+    width: 100%; /* Make it span the entire width of the screen */
+    z-index: 1000; /* Ensure it stays above other elements */
+    background-color: rgba(0, 0, 0, 0); /* Optional background for visibility */
+    padding: 0.5rem 1rem; /* Optional padding */
+}
+
+.content {
+    margin-top: 4rem; /* Adjust this based on your top bar height */
+}
+
+button {
+    all: unset; /* Resets default button styles */
+    display: inline-block;
+    background-color: blue; /* Sets button color to blue */
+    color: white; /* Makes text color white */
+    text-align: center; /* Centers text within the button */
+    border-radius: 50px; /* Rounds the edges */
+    padding: 1rem 2rem; /* Adds padding for size and spacing */
+    font-size: 1.5rem; /* Adjusts font size for readability */
+    width: 5vw; /* Makes button width 5% of the viewport width */
+    height: 2vw; /* Makes button height 5% of the viewport width */
+    cursor: pointer; /* Shows pointer on hover for interactivity */
+    border: none; /* Removes any borders */
+}
+
+button:hover {
+    background-color: darkblue; /* Changes color slightly when hovered */
+}
     </style>
 </head>
 <body>
+	
+	
+	
     <div class="container" id="container">
+		
+        
+		
         <div class="title" id="title">Loading...</div>
         <div class="attribution" id="attribution"></div>
         <div class="text-container" id="text-container">
             <!-- Content will be dynamically loaded -->
         </div>
     </div>
-
+	
     <div class="popup" id="popup">Article not found</div>
-
+	
+	<br>
+	
+	<div class="topbar" id="topbar"><button onclick="TurnLeft();">&larr;</button><button onclick="TurnRight();">&rarr;</button></div>
     <script>
         const container = document.getElementById('container');
         const titleElement = document.getElementById('title');
@@ -242,7 +287,8 @@
             }
             animate();
         }
-
+		
+		
         // Show popup with message
         function showPopup(message) {
             popup.textContent = message;
@@ -251,6 +297,30 @@
                 popup.classList.remove('show');
             }, 3000); // Hide popup after 3 seconds
         }
+		
+    // Function to go to the previous content
+    function TurnLeft() {
+        //if (currentRepoIndex => 0) {
+        if(currentRepoIndex != 0)
+		{
+			currentRepoIndex--;
+			BoolGrads = true;
+			loadContent(currentRepoIndex);
+		}
+		//} else {
+        //    showPopup('No previous articles available');
+        //}
+		//if (currentRepoIndex < 0)
+		//	{ currentRepoIndex = 0; }
+    }
+
+    // Function to go to the next content
+    function TurnRight() {
+		BoolGrads = true;
+        currentRepoIndex++;
+        loadContent(currentRepoIndex);
+    }
+		
     </script>
 </body>
 </html>
