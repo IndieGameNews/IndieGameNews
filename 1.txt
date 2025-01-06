@@ -1,52 +1,121 @@
-An Interview With GodwayGames ( Thrack-The-Fox )
+An Interview with Addmix on the current state of the industry
 
 IndieGameNews
 
-Let's jump right in—"Thrack the Fox" has caught a little bit of attention already. Could you tell us about the inspiration behind the game?
+Recently I had an interview with a developer on the state of affairs in the industry, 
+these were the results of our interaction.
 
-Godway Games: Well, we had a lot of different inspirations, massively taking following in the footsteps of PlayStation and N64 titles, while trying to maintain conveniences you'd find in more modern games and ensuring as many people could play it as possible, hence why the specs are so purposefully low.
+1.) What do you think the biggest problems are in the current industry?
 
-That sounds like a thoughtful and ambitious blend of old and new! Nostalgia meets modern accessibility—love it. What specific elements from those classic PlayStation and N64 titles can players expect to see in Thrack the Fox? Are there any features or gameplay mechanics you’re especially excited about?
+Lack of focus on gameplay.
 
-Godway Games: A favorite feature of mine, granted that we can actually accomplish it, was one of my own ideas. It will allow modders to use the console to develop their mods directly in the game’s ecosystem during runtime and even test them on the fly. It’s called the Thrack Modding API, and as far as I can tell, it’s a one-of-a-kind thing all its own.
+2.) would you like to expand on that?
 
-The Thrack Modding API sounds like a game-changer—literally! That level of integration and accessibility for modders is incredibly forward-thinking. Allowing them to work within the game’s ecosystem during runtime must open up endless possibilities for creativity and customization. How do you envision this feature shaping the Thrack the Fox community? Do you think it could extend the game's lifespan by empowering players to create their own content?
+I've just noticed an uncomfortable trend of games focusing on adding more gimmicks, and making things more complicated, 
+rather than iterating on the base features of the game to make them as fun as possible.
+Look at the Call of Duty franchise, it's been around for more than 2 decades, 
+it's a game about shooting people with guns. 
+What significant improvement has been made on gun mechanics in the franchise?
+At a basic level, the mechanics of how the guns handle, and operate is unchanged back to the first game in the franchise. 
+Some mix of RNG and sight bloom, as if a better alternative doesn't exist.
+Luckily, the competition from Helldivers 2 seems to have inspired Treyarch to improve movement for the first time since maybe the original MW2? 
+Omnimovement definitely is a gimmick, and doesn't have a huge effect on gameplay experience, 
+but at least it shows they are willing to shake things up, when suitable competition comes a-knocking.
 
-Godway Games: Oh absolutely, it’s a mod-creator’s dream tool.
+3.) What would you as a developer like to see changed?
 
-I can see that! It’s not just a tool; it’s an invitation to the community to co-create and evolve the game alongside you. That’s bound to build a passionate following. Speaking of community, do you have any plans to showcase or support mods created by players? For example, could we see a curated mod spotlight or even an official mod marketplace down the line?
+I'd probably change a few things.
+I think that generally, time-to-kill in games should be decreased,
+I don't think that the increase in TTK that has been observed over the past few years is executed very well. 
+I think the game design they are going for, increase movement speed, and increase TTK will help them with casual audiences, 
+which may be true, however I think it removes the penalty players incur when they put themselves in a bad position.
+Other than that, I'd like to see general gun mechanics improve,
+I don't think a game dedicated to shooting guns should have the most basic accuracy/recoil system consisting of camera recoil and sight bloom.
+I think games like Insurgency Sandstorm and Ready or Not have good ideas, 
+having bullets fire from the barrel, and applying recoil as simulations/dynamic animations to the model.
 
-Godway Games: It’s already in development actually; we’ve begun work on a back-end for the game. But of course, we are a small team and may have to scrap the entire concept altogether due to budget and staffing limitations.
+4.) what other titles do you believe suffer from these aforementioned problems?
 
-It’s incredible that you’re thinking so far ahead, even while balancing the challenges of being a small team. The back-end for a modding ecosystem is no small task, but it sounds like a fantastic way to amplify player creativity and engagement if you can pull it off. What would you say has been the biggest challenge in developing Thrack the Fox so far? And on the flip side, what has been the most rewarding moment for your team?
+It's hard to say. 
+Battlefield definitely has to a degree. A game that I used to play a lot,
+which I think was quite innovative in it's lifespan is Phantom Forces, a Roblox game. 
+Over the years of balance updates, movement speed has increased significantly,
+where most weapons across the board have been nerfed.
 
-Godway Games: Thrack has been developed under a consistent shoestring budget and on a constant skeleton crew. There’s never a day that more than five people are active out of a team of about 22, as we simply wouldn’t be able to afford it. As for the most rewarding moment? Probably Mr. P giving us the greenlight to begin with.
+I know there are some players that do enjoy the fast movement and slower TTK, 
+but more than anything I wish that the modern idea of forever-games didn't exist. 
+We still have the option to go back and play the original MW2, in almost exactly the same way as it released. 
+There's a certain point with live-service games where developers need to consider the game "done" and release a sequel, 
+leaving the original game intact.
 
-That’s a testament to your team’s passion and resilience. Building a game under those constraints is no easy feat, but it’s clear how dedicated you all are to making Thrack the Fox a reality. Hats off to you for persevering through those challenges! And Mr. P giving you the greenlight—that sounds like a pivotal moment. Can you tell us a bit more about that? What made his support so meaningful for the project?
+5.) It's a pity that this is the case. Would you like to elaborate on your experiences explaining how we got to this point?
 
-Godway Games: Without Mr. P, there would be no studio at all; we were either going to work on Codename: Bridge or we were going to work on a different game codenamed Untitled Puzzle Game. I did some work on the second, but of course, 90% of my time has gone into the first, which became Thrack the Fox.
+It's definitely been the increase in competitive play. 
+It seems like everyone would rather focus on winning than having a good time. 
+I see it fairly frequently, where people don't play games because the game itself is fun, 
+but because they are addicted to winning, increasing their kill/death ratio, unlocking the next character/weapon, 
+or whatever other pseudo-addictive game design feature.
+It's a stark contrast compared to the era of Xbox 360 games, that were all very casual/party focused. 
+Halo 5 exemplifies this shift, compared to Halo 3 or Reach, which still had a very large casual audience.
 
-It’s fascinating to hear how those early decisions shaped the studio and the direction of Thrack the Fox! It sounds like Mr. P’s belief in the project was the foundation that allowed everything to take off. Switching gears a bit—what is it about Thrack the Fox that sets it apart from other indie games in the same genre? What do you hope players will take away from their experience with the game?
+6.) And when do you think this shift began, with Halo 5 as you mentioned? Why the change?
 
-Godway Games: Innovative gameplay technology, its take on using older graphics for both efficiency and its style, and of course the quirky characters found within the game itself. In Thrack’s world, everyone is a little bit off. This is purposeful—the characters are fun to talk to and interact with, and most of them would seem completely insane by real-world standards, but in Thrack’s world, they’re considered normal.
+Probably the success of E-sports games like Counter Strike and Rainbow Six Siege. 
+Developers want to cash in on the competitions. 
+There have been a lot of games trying to force themselves into being perfectly balanced and competitive experiences, 
+Insurgency Sandstorm's release was a bit of a flop due to how heavily they tried to lean into marketing it as a competitive PVP game, 
+rather than what the game actually excels at.
 
-That’s such a unique approach! It’s not every day that you hear about a game embracing a world where quirky, eccentric characters are the standard. It sounds like it’s going to make Thrack the Fox a memorable experience not just for its gameplay, but for its personality and humor. Do you have a personal favorite character from the game? Or maybe one whose creation brought some particularly fun or interesting challenges?
+7.) is there anything else in the development landscape you'd like to touch on? the Palworld-Nintendo Situation? EA Games? Helldivers? ConcernedApe? Or something else?
 
-Godway Games: Probably Taegromo, but I can’t say why without spilling details. All I can say is that he’s a blue dragon who will be in the game’s story.
+That all sounds like industry drama to be honest. 
+I don't thinks it's really profitable or productive for anyone, except maybe tabloid journalists who need clickbait. 
+there has been, and always will be some form of drama going on, 
+I think the only thing that might have a positive effect on the industry would be better games.
 
-A blue dragon named Taegromo—now that’s intriguing! I can already sense there’s something special about that character, especially with how tight-lipped you’re being. I’ll take your word for it that we’re in for a treat when it comes to his role in the story. Before we wrap up, is there anything you’d like to share with your fans and potential players about the future of Thrack the Fox? What can they look forward to, and how can they support the game during its development?
+8.) What do you think the future of gaming looks like in terms of innovation? 
+Are there any trends you’re particularly excited, or worried about?
 
-Godway Games: We have been considering an Indiegogo or Kickstarter or something of the sort. If people could donate to it, that’d massively speed up our development cycle.
+I'm definitely interested to see how communities like the Redot Engine progress, 
+I hope that idea of "Just make games" helps the industry focus on quality, 
+rather than quantity or graphics/art.
 
-That’s a great idea! Crowdfunding could be a game-changer in terms of accelerating development and helping Thrack the Fox reach its full potential. It’s always exciting to see fans directly supporting the game they’re passionate about. I’m sure your community will be eager to jump on board and help in any way they can. We’ll definitely be keeping an eye out for updates, and I’m sure the game’s supporters will rally behind it. Thank you so much for sharing insights into the development of Thrack the Fox—it’s clear this is a project fueled by heart, creativity, and determination. Best of luck to you and the team as you continue bringing this world to life!
+9.) how would you describe the "just make games" philosophy to those reading this?
 
-Godway Games and TPSG Social media's can be seen below:
+Gaming isn't about the developers belief. 
+Games shouldn't be about making sure everyone has the same opinions, 
+and most people don't want to play games that try to force the player to submit to the developer's opinions. 
+Just focus on the game itself, and how you can make it as good as it can be. Respect other people's beliefs and opinions, 
+and don't sacrifice your reputation or waste your time in a vain attempt to force people to agree with your own opinions.
 
-https://store.steampowered.com/app/3249500/Thrack_The_Fox/
+10.) some would argue that it's impossible to create a story without putting your own bias in it, how do you rebuttal that?
 
-https://x.com/Godway_Games
-https://godwaygames.itch.io/
+There are plenty of examples of stories, 
+especially those with sensitive subject matter that do not force the player/reader/viewer to believe in something they do not, 
+nor shame them for the beliefs they might have. 
+When I watched "The Zone of Interest", 
+I didn't necessarily agree with everything that is portrayed in the film, 
+and I assume even the writers and actors would disagree with the actions and historical figures being portrayed, 
+but despite it all, noone was lectured about their beliefs. 
+They never told the characters or the viewers how they needed to interpret the events depicted. 
+The movie itself was just a raw and direct account of events, 
+with the audience left to digest and take away whatever meaning they might find. 
+I don't personally believe that media that preaches and pushes certain opinions are persuasive to most audiences. 
+At the end of the day, that's why it's unproductive to try to force your will onto others.
 
-https://x.com/TpsgOfficial
-https://www.trentpattersonstudiogaming.com/
-https://tpsg.itch.io/
+11.) What do you think gamers could do right now to mitigate some of the issues you addressed?
+
+Know what you are getting into. 
+Don't support developers or franchises that treat your poorly, or look down on you. 
+The consumer is the most valuable part of any business, and without them no business can succeed.
+
+12.) is there anything people could do to help support you and your development career?
+
+By far the most valuable thing to have is a community. 
+If you are interested in game development, flight simulators, or sandbox games, 
+consider stopping by in my Discord server and say "hello".
+
+https://discord.gg/w47buyMpvR
+https://youtube.com/@addmix
+https://warning-low-tides.itch.io/
+https://github.com/addmix
