@@ -254,3 +254,79 @@
     </script>
 </body>
 </html>
+
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+<body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Initialize the Supabase client
+            const SUPABASE_URL = "https://jucldzdnyqxzfezhvdbu.supabase.co";
+            const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp1Y2xkemRueXF4emZlemh2ZGJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzU0MjA3MTEsImV4cCI6MjA1MDk5NjcxMX0.l-QvoNgJvOsew8kmy5fulFapiIox1YGbjd-YHrAPi3k";
+            const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+            // Get the user's IP address using ipify API
+            let userIp = await fetch("https://api.ipify.org?format=json")
+                .then(response => response.json())
+                .then(data => data.ip)
+                .catch(err => {
+                    console.error("Failed to fetch IP address", err);
+                    return "unknown";
+                });
+
+            // Attempt to get the visit ID from localStorage (to keep track of the same visit)
+            let visitId = localStorage.getItem('visitId');
+            let duration = parseInt(localStorage.getItem('duration') || '0'); // Initialize duration to 0 if not found
+
+            // If no visit ID is found, create a new entry in the database
+            if (!visitId) {
+                const { data, error } = await supabaseClient
+                    .from('visits')
+                    .insert([
+                        { ip_address: userIp, visit_start: new Date().toISOString(), duration: 0 }
+                    ]);
+
+                if (error) {
+                    console.error("Error inserting visit:", error);
+                    return;
+                }
+
+                // Correctly extract visit ID
+                if (data && data.length > 0) {
+                    visitId = data[0].id; // Extract ID from the inserted row
+                    localStorage.setItem('visitId', visitId); // Store visit ID
+                }
+            }
+
+            // Start a timer to update the visit duration every minute
+            const updateDuration = async () => {
+                // Increment the duration by 1 each minute
+                duration += 1;
+
+                // Update the duration in the database
+                const { error } = await supabaseClient
+                    .from('visits')
+                    .update({ duration: duration })
+                    .eq('id', visitId);
+
+                if (error) {
+                    console.error("Error updating duration:", error);
+                    return;
+                }
+
+                // Store the updated duration in localStorage for future use
+                localStorage.setItem('duration', duration);
+
+                console.log("Duration updated:", duration);
+            };
+
+            // Set an interval to update the duration every minute
+            setInterval(updateDuration, 60000000000); // Every 60 seconds
+        });
+    </script>
+    
+</body>
+
