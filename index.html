@@ -339,31 +339,29 @@ button:hover {
         loadContent(currentRepoIndex);
     }
 	
-        // Function to check URL for a "Page" parameter and load content accordingly
-        function handlePageParameter() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const pageParam = urlParams.get('Page');
-			
-            if (pageParam) {
-                const pageNumber = parseInt(pageParam, 10);  // Convert to an integer
-				if ( checkContentExists(pageNumber) )
-				{
-					if (pageNumber < 0)
-						pageNumber = 0;
-					
+		async function handlePageParameter() {
+			const urlParams = new URLSearchParams(window.location.search);
+			const pageParam = urlParams.get('Page');
+		
+			if (pageParam) {
+				let pageNumber = parseInt(pageParam, 10);  // Convert to an integer
+				
+				const contentExists = await checkContentExists(pageNumber);
+				if (contentExists) {
+					if (pageNumber < 0) pageNumber = 0;  // Ensure valid page number
 					loadContent(pageNumber);  // Load the content based on the page number
 					currentRepoIndex = pageNumber;
+				} else {
+					showPopup('Article not found');
+					loadContent(1);  // Fallback to the first page
+					currentRepoIndex = 1;
 				}
-				else
-				{
-					loadContent(1);  // Default to Page 1 if no "Page" parameter is found
-					currentRepoIndex = 1;					
-				}
-            } else {
-                loadContent(1);  // Default to Page 1 if no "Page" parameter is found
+			} else {
+				loadContent(1);  // Default to Page 1 if no "Page" parameter is found
 				currentRepoIndex = 1;
-            }
-        }
+			}
+		}
+		
 
         // Call the function to handle the "Page" parameter from the URL
         handlePageParameter();
