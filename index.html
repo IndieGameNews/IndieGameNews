@@ -23,7 +23,7 @@
             position: relative;
             width: 80%;
             height: 80%;
-            background: linear-gradient(to bottom, blue 60%, rgba(0,0,255,0));
+            background: linear-gradient(to bottom, rgba(0,0,0,255) 60%, rgba(0,0,255,0));
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
@@ -118,7 +118,8 @@
 button {
     all: unset; /* Resets default button styles */
     display: inline-block;
-    background-color: blue; /* Sets button color to blue */
+	background-color:rgba(20,26,101,255);
+    //background-color: blue; /* Sets button color to blue */
     color: white; /* Makes text color white */
     text-align: center; /* Centers text within the button */
     border-radius: 50px; /* Rounds the edges */
@@ -154,7 +155,7 @@ button:hover {
 	
 	<br>
 	
-	<div class="topbar" id="topbar"><button onclick="TurnLeft();">&larr;</button><button onclick="TurnRight();">&rarr;</button></div>
+	<div class="topbar" id="topbar"><button onclick="enableDarkMode();">DarkMode</button><button onclick="TurnLeft();">&larr;</button><button onclick="TurnRight();">&rarr;</button></div>
     <script>
         const container = document.getElementById('container');
         const titleElement = document.getElementById('title');
@@ -263,15 +264,15 @@ button:hover {
             const threshold = width * 0.01;
 
             if (mouseX < threshold) {
-                container.style.background = `linear-gradient(90deg, white, #33ccff)`;
+                container.style.background = `linear-gradient(90deg, white, rgba(20,26,101,255))`;
 				BoolGrads = true;
 				//ResetUrlPoint();
             } else if (mouseX > width - threshold) {
-                container.style.background = `linear-gradient(90deg, #33ccff, white)`;
+                container.style.background = `linear-gradient(90deg, rgba(20,26,101,255), white)`;
 				BoolGrads = true;
 				//ResetUrlPoint()
             } else {
-                container.style.background = `linear-gradient(to bottom, blue 60%, rgba(0,0,32,32))`;
+                container.style.background = `linear-gradient(to bottom, rgba(20,26,101,255) 60%, rgba(0,0,32,32))`;
 				BoolGrads = false;				
 				//ResetUrlPoint();
             }
@@ -296,7 +297,7 @@ button:hover {
                 const currentTime = Date.now();
                 const elapsed = currentTime - start;
                 const factor = Math.min(elapsed / duration, 1);
-                const endColor = `linear-gradient(to bottom, blue 60%, rgba(0,0,255,0))`;
+                const endColor = `linear-gradient(to bottom, rgba(20,26,101,255) 60%, rgba(0,0,255,0))`;
                 container.style.background = endColor;
 
                 if (factor < 1) {
@@ -365,6 +366,48 @@ button:hover {
 
         // Call the function to handle the "Page" parameter from the URL
         handlePageParameter();
+
+
+		function enableDarkMode() {
+			// Set global text color to white
+			document.body.style.color = 'white';
+		
+			// Apply styles to the popup, topbar, and button classes
+			const popupElements = document.querySelectorAll('.popup');
+			const topbarElements = document.querySelectorAll('.topbar');
+			const buttonElements = document.querySelectorAll('button');
+			const divElements = document.querySelectorAll('div');
+			const ContainerElements = document.querySelectorAll('background');
+			// Apply specific styles to popup, topbar, and buttons
+			popupElements.forEach(element => {
+				element.style.outline = '2px solid white';
+				element.style.backgroundColor = 'black';  // make div background black
+			});
+		
+			topbarElements.forEach(element => {
+				element.style.outline = '2px solid white';
+				element.style.backgroundColor = 'black';  // make div background black
+			});
+		
+			buttonElements.forEach(element => {
+				element.style.outline = '2px solid white';
+				element.style.backgroundColor = 'black';  // make button background black
+				element.style.color = 'white';  // make button text white
+			});
+			ContainerElements.forEach(element => {
+				element.style.outline = '2px solid white';
+				element.style.backgroundColor = 'black';
+			});
+			// Apply dark mode for divs
+			divElements.forEach(element => {
+				element.style.backgroundColor = 'black';
+				element.style.color = 'white';  // make div text white
+			});
+		}
+
+
+
+
 
 
     </script>
