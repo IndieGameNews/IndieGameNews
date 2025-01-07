@@ -210,6 +210,24 @@ button:hover {
 				
 			}
         }
+
+		async function checkContentExists(index) {
+			const url = `https://raw.githubusercontent.com/IndieGameNews/IndieGameNews/refs/heads/main/${index}.txt`;
+			
+			try {
+				const response = await fetch(url);
+				
+				// Check if the response is ok (status 200)
+				if (response.ok) {
+					return true;  // Content exists
+				} else {
+					return false;  // Content doesn't exist
+				}
+			} catch (error) {
+				console.error(error);
+				return false;  // Error occurred, so assume the content doesn't exist
+			}
+		}
 		
 		function ResetUrlPoint(){
 			//currentRepoIndex = 0;
@@ -320,8 +338,38 @@ button:hover {
         currentRepoIndex++;
         loadContent(currentRepoIndex);
     }
-		
+	
+        // Function to check URL for a "Page" parameter and load content accordingly
+        function handlePageParameter() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const pageParam = urlParams.get('Page');
+			
+            if (pageParam) {
+                const pageNumber = parseInt(pageParam, 10);  // Convert to an integer
+				if ( checkContentExists(pageNumber) )
+				{
+					if (pageNumber < 0)
+						pageNumber = 0;
+					
+					loadContent(pageNumber);  // Load the content based on the page number
+					currentRepoIndex = pageNumber;
+				}
+				else
+				{
+					loadContent(1);  // Default to Page 1 if no "Page" parameter is found
+					currentRepoIndex = 1;					
+				}
+            } else {
+                loadContent(1);  // Default to Page 1 if no "Page" parameter is found
+				currentRepoIndex = 1;
+            }
+        }
+
+        // Call the function to handle the "Page" parameter from the URL
+        handlePageParameter();
+
+
     </script>
-</body>
+</body>  
 
 </html>
