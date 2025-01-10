@@ -166,7 +166,8 @@ button:hover {
 		var LastFetched = '';
         var currentRepoIndex = 0; // Track the current article index
         let animationFrameId = null;
-
+		var IsDarkMode = false;
+		
         // Fetch and populate content
         async function loadContent(index) {
             const url = `https://raw.githubusercontent.com/IndieGameNews/IndieGameNews/refs/heads/main/${index}.txt`;
@@ -264,15 +265,24 @@ button:hover {
             const threshold = width * 0.01;
 
             if (mouseX < threshold) {
-                container.style.background = `linear-gradient(90deg, white, rgba(20,26,101,255))`;
+				if (!IsDarkMode)
+					container.style.background = `linear-gradient(90deg, white, rgba(20,26,101,255))`;
+				else
+					container.style.background = `linear-gradient(90deg, white, black)`;
 				BoolGrads = true;
 				//ResetUrlPoint();
             } else if (mouseX > width - threshold) {
-                container.style.background = `linear-gradient(90deg, rgba(20,26,101,255), white)`;
-				BoolGrads = true;
+				if (!IsDarkMode)
+					container.style.background = `linear-gradient(90deg, rgba(20,26,101,255), white)`;
+				else
+					container.style.background = `linear-gradient(90deg, black, white)`;
+					BoolGrads = true;
 				//ResetUrlPoint()
             } else {
-                container.style.background = `linear-gradient(to bottom, rgba(20,26,101,255) 60%, rgba(0,0,32,32))`;
+				if (!IsDarkMode)
+					container.style.background = `linear-gradient(to bottom, rgba(20,26,101,255) 60%, rgba(0,0,32,32))`;
+				else
+					container.style.backgroundColor = 'black';
 				BoolGrads = false;				
 				//ResetUrlPoint();
             }
@@ -297,8 +307,16 @@ button:hover {
                 const currentTime = Date.now();
                 const elapsed = currentTime - start;
                 const factor = Math.min(elapsed / duration, 1);
-                const endColor = `linear-gradient(to bottom, rgba(20,26,101,255) 60%, rgba(0,0,255,0))`;
-                container.style.background = endColor;
+				
+				
+				if (!IsDarkMode)
+					endColor = `linear-gradient(to bottom, rgba(20,26,101,255) 60%, rgba(0,0,255,0))`;
+				else
+					endColor = `linear-gradient(to bottom, black 60%, black)`;
+				//else 
+				//	container.style.backgroundColor = 'black';
+                
+				container.style.background = endColor;
 
                 if (factor < 1) {
                     animationFrameId = requestAnimationFrame(animate);
@@ -369,6 +387,7 @@ button:hover {
 
 
 		function enableDarkMode() {
+			IsDarkMode = true;
 			// Set global text color to white
 			document.body.style.color = 'white';
 		
@@ -400,7 +419,8 @@ button:hover {
 			});
 			// Apply dark mode for divs
 			divElements.forEach(element => {
-				element.style.backgroundColor = 'black';
+				//console.log()
+				//element.style.backgroundColor = 'black';
 				element.style.color = 'white';  // make div text white
 			});
 		}
