@@ -358,8 +358,8 @@ button:hover {
 					currentRepoIndex = 1;
 				}
 			} else {
-				loadContent(1);  // Default to Page 1 if no "Page" parameter is found
-				currentRepoIndex = 1;
+				loadContent(0);  // Default to Page 0 if no "Page" parameter is found
+				currentRepoIndex = 0; //oops, I had this as page 1 earlier. 
 			}
 		}
 		
