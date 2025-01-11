@@ -263,7 +263,7 @@ button:hover {
             const width = container.offsetWidth;
             const mouseX = e.clientX - container.offsetLeft;
             const threshold = width * 0.01;
-
+			
             if (mouseX < threshold) {
 				if (!IsDarkMode)
 					container.style.background = `linear-gradient(90deg, white, rgba(20,26,101,255))`;
@@ -286,11 +286,12 @@ button:hover {
 				BoolGrads = false;				
 				//ResetUrlPoint();
             }
+			//document.body.style.color = 'white';
         });
-
-        container.addEventListener('mouseenter', (e) => {
-            container.style.background = `linear-gradient(to bottom, lime, lime)`;
-        });
+		
+        //container.addEventListener('mouseenter', (e) => {
+        //    container.style.background = `linear-gradient(to bottom, lime, lime)`;
+        //});
 
         container.addEventListener('mouseleave', () => {
             if (animationFrameId) {
@@ -389,7 +390,8 @@ button:hover {
 		function enableDarkMode() {
 			IsDarkMode = true;
 			// Set global text color to white
-			document.body.style.color = 'white';
+			//document.body.style.backgroundColor = 'black';
+			//document.body.style.color = 'white';
 		
 			// Apply styles to the popup, topbar, and button classes
 			const popupElements = document.querySelectorAll('.popup');
@@ -397,6 +399,13 @@ button:hover {
 			const buttonElements = document.querySelectorAll('button');
 			const divElements = document.querySelectorAll('div');
 			const ContainerElements = document.querySelectorAll('background');
+			const bodyElements = document.querySelectorAll('body');
+			
+			document.body.style.background = 'linear-gradient(to bottom, black 60%, rgb(16,16,32))';
+			//const xcontainer = document.getElementById('container');
+			//xcontainer.style.background = 'linear-gradient(to bottom, black 60%, black)';
+			//xcontainer.style.background = 'linear-gradient(to bottom, black 60%, black)';
+			
 			// Apply specific styles to popup, topbar, and buttons
 			popupElements.forEach(element => {
 				element.style.outline = '2px solid white';
@@ -417,6 +426,10 @@ button:hover {
 				element.style.outline = '2px solid white';
 				element.style.backgroundColor = 'black';
 			});
+			//bodyElements.forEach(element => {
+			//	element.style.outline = '2px solid white';
+			//	element.style.backgroundColor = 'black';
+			//});			
 			// Apply dark mode for divs
 			divElements.forEach(element => {
 				//console.log()
