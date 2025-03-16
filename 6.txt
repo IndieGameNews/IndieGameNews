@@ -1,0 +1,14 @@
+EA saving face! Or perhaps just a preservation effort.
+3/16/2025
+
+Command & Conquer (Tiberian Dawn), Red Alert, Renegade, and Generals have all had their source code released.
+
+This is likely due to the huge amount of negativity surrounding the companies practices currently, however
+the claims from EA would probably deny this and claim it as an ongoing effort to preserve the franchise.  
+
+Whatever the case any developer can now tinker with very real original C&C source code.
+
+The source code for Command & Conquer and Red Alert was previously released in 2020 as part of the Command & Conquer Remastered Collection, but this new release includes the "fully recovered source code".
+
+you can find it here:
+https://github.com/electronicarts
