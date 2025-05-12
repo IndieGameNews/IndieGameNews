@@ -1,0 +1,35 @@
+A Five Question Interview With kybe (Ship of Theseus)
+
+IndieGameNews 5/12/2025
+
+Before I begin I should mention that the game has no name, no publisher, and no promises; but a bold idea is taking shape.
+
+1.) Thanks for joining me. Let’s start with the basics—what is your game about?
+
+Kybe: It’s a hybrid of space-colony simulation and real-time strategy. You’ll manage a crew of mercenaries as you travel the galaxy on contracts. We’re implementing full atmosphere simulation—oxygen, pressure, hazards—and advanced pathfinding for crew movement between multiple ships and environments.
+
+2.) How does that compare to titles like RimWorld or Faster Than Light?
+
+Kybe: Think of the emergent survival storytelling of RimWorld combined with FTL’s ship-management feel, but with a twist: death isn’t permanent for your characters—revival machines reprint them in about thirty minutes, memories intact. However, any equipment lost in combat or exploration stays lost, so you’ll need to buy or loot replacements, and there will be on-ship crafting for basic repairs and upgrades.
+
+3.) That resurrection mechanic sounds fascinating. What inspired it?
+
+Kybe: I’m drawing heavily from the Undying Mercenaries book series: standard sci-fi trappings—FTL drives, alien worlds—but centered on revival tech. That balance of expendable mercenaries with permanent gear loss creates intense risk-vs-reward moments.
+
+4.) Where are you in development right now?
+
+Kybe: Early stage. I’ve built core colony-sim systems and pathfinding, but combat isn’t in the code yet. Currently I’m integrating multiple ships in the same scene and crew-routing logic—essential for boarding-raid missions against plague-infested stations. As a solo developer handling art, design, and programming, my biggest challenge is scope, so I’m prioritizing features critical to the core loop.
+
+5.) Do you have a working title?
+
+Kybe: You can call it Space Mercenaries for now—or Ship of Theseus, reflecting the theme of identity through resurrection.
+
+
+This project blends deep simulation with adrenaline-charged strategy in a unique way. 
+The revival-machine concept opens up creative gameplay trade-offs, and the ambitious atmosphere system promises immersive environments. 
+As a solo developer, focusing on the core loop and iterating through play-tests will be key—this game has strong potential to stand out in the indie space.
+I think we'll all be excited to see how Ship of Theseus evolves and you can follow that development in the social channels below!
+
+https://itch.io/profile/kybe
+
+https://twitter.com/Kybe2
