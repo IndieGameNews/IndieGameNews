@@ -22,7 +22,7 @@ Kybe: Early stage. I’ve built core colony-sim systems and pathfinding, but com
 
 5.) Do you have a working title?
 
-Kybe: You can call it Space Mercenaries for now—or Ship of Theseus, reflecting the theme of identity through resurrection.
+Kybe: You can call it, for now Ship of Theseus, reflecting the theme of identity through resurrection.
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 This project blends deep simulation with adrenaline-charged strategy in a unique way. 
