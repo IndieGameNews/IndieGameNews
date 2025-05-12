@@ -24,7 +24,7 @@ Kybe: Early stage. I’ve built core colony-sim systems and pathfinding, but com
 
 Kybe: You can call it Space Mercenaries for now—or Ship of Theseus, reflecting the theme of identity through resurrection.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------
 This project blends deep simulation with adrenaline-charged strategy in a unique way. 
 The revival-machine concept opens up creative gameplay trade-offs, and the ambitious atmosphere system promises immersive environments. 
 As a solo developer, focusing on the core loop and iterating through play-tests will be key—this game has strong potential to stand out in the indie space.
