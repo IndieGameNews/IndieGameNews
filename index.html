@@ -70,7 +70,7 @@
         }
 
         .text-container::-webkit-scrollbar-thumb {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(255, 255, 255, 0.5);
             border-radius: 10px;
         }
 
@@ -135,6 +135,7 @@ button:hover {
     background-color: darkblue; /* Changes color slightly when hovered */
 }
     </style>
+	
 </head>
 <body>
 	
@@ -155,7 +156,7 @@ button:hover {
 	
 	<br>
 	
-	<div class="topbar" id="topbar"><button onclick="enableDarkMode();">DarkMode</button><button onclick="TurnLeft();">&larr;</button><button onclick="TurnRight();">&rarr;</button></div>
+	<div class="topbar" id="topbar"><button onclick="ToggleDarkMode();">DarkMode</button><button onclick="TurnLeft();">&larr;</button><button onclick="TurnRight();">&rarr;</button></div>
     <script>
         const container = document.getElementById('container');
         const titleElement = document.getElementById('title');
@@ -166,8 +167,9 @@ button:hover {
 		var LastFetched = '';
         var currentRepoIndex = 0; // Track the current article index
         let animationFrameId = null;
-		var IsDarkMode = true;
-		
+		var IsDarkMode = false;
+		var MouseMode = false;
+
         // Fetch and populate content
         async function loadContent(index) {
             const url = `https://raw.githubusercontent.com/IndieGameNews/IndieGameNews/refs/heads/main/${index}.txt`;
@@ -245,18 +247,20 @@ button:hover {
         container.addEventListener('click', (e) => {
             const width = container.offsetWidth;
             const mouseX = e.clientX - container.offsetLeft;
-
-            if (mouseX < width / 2) {
-                // Left click (decrement index)
-                if (currentRepoIndex > 0) {
-                    currentRepoIndex--;
-                    loadContent(currentRepoIndex);
-                }
-            } else {
-                // Right click (increment index)
-                currentRepoIndex++;
-                loadContent(currentRepoIndex);
-            }
+			if ( MouseMode == true )
+			{
+				if (mouseX < width / 2) {
+					// Left click (decrement index)
+					if (currentRepoIndex > 0) {
+						currentRepoIndex--;
+						loadContent(currentRepoIndex);
+					}
+				} else {
+					// Right click (increment index)
+					currentRepoIndex++;
+					loadContent(currentRepoIndex);
+				}
+			}	
         });
 
         container.addEventListener('mousemove', (e) => {
@@ -264,29 +268,33 @@ button:hover {
             const mouseX = e.clientX - container.offsetLeft;
             const threshold = width * 0.01;
 			
-            if (mouseX < threshold) {
-				if (!IsDarkMode)
-					container.style.background = `linear-gradient(90deg, white, rgba(20,26,101,255))`;
-				else
-					container.style.background = `linear-gradient(90deg, white, black)`;
-				BoolGrads = true;
-				//ResetUrlPoint();
-            } else if (mouseX > width - threshold) {
-				if (!IsDarkMode)
-					container.style.background = `linear-gradient(90deg, rgba(20,26,101,255), white)`;
-				else
-					container.style.background = `linear-gradient(90deg, black, white)`;
+			if ( MouseMode == true)
+			{
+				
+				if (mouseX < threshold) {
+					if (!IsDarkMode)
+						container.style.background = `linear-gradient(90deg, white, rgba(20,26,101,255))`;
+					else
+						container.style.background = `linear-gradient(90deg, white, gray)`;
 					BoolGrads = true;
-				//ResetUrlPoint()
-            } else {
-				if (!IsDarkMode)
-					container.style.background = `linear-gradient(to bottom, rgba(20,26,101,255) 60%, rgba(0,0,32,32))`;
-				else
-					container.style.backgroundColor = 'black';
-				BoolGrads = false;				
-				//ResetUrlPoint();
-            }
-			//document.body.style.color = 'white';
+					//ResetUrlPoint();
+				} else if (mouseX > width - threshold) {
+					if (!IsDarkMode)
+						container.style.background = `linear-gradient(90deg, rgba(20,26,101,255), white)`;
+					else
+						container.style.background = `linear-gradient(90deg, black, white)`;
+						BoolGrads = true;
+					//ResetUrlPoint()
+				} else {
+					if (!IsDarkMode)
+						container.style.background = `linear-gradient(to bottom, rgba(20,26,101,255) 60%, rgba(0,0,32,32))`;
+					else
+						container.style.backgroundColor = 'black';
+					BoolGrads = false;				
+					//ResetUrlPoint();
+				}
+				//document.body.style.color = 'white';
+			}	
         });
 		
         //container.addEventListener('mouseenter', (e) => {
@@ -335,7 +343,7 @@ button:hover {
                 popup.classList.remove('show');
             }, 3000); // Hide popup after 3 seconds
         }
-		
+		//MouseMode
     // Function to go to the previous content
     function TurnLeft() {
         //if (currentRepoIndex => 0) {
@@ -388,6 +396,7 @@ button:hover {
 
 
 		function enableDarkMode() {
+			//if IsDarkMode
 			IsDarkMode = true;
 			// Set global text color to white
 			//document.body.style.backgroundColor = 'black';
@@ -436,13 +445,86 @@ button:hover {
 				//element.style.backgroundColor = 'black';
 				element.style.color = 'white';  // make div text white
 			});
+			
+		}
+
+		function disableDarkMode() {
+			//if IsDarkMode
+			IsDarkMode = false;
+			// Set global text color to white
+			//document.body.style.backgroundColor = 'black';
+			//document.body.style.color = 'white';
+		
+			// Apply styles to the popup, topbar, and button classes
+			const popupElements = document.querySelectorAll('.popup');
+			const topbarElements = document.querySelectorAll('.topbar');
+			const buttonElements = document.querySelectorAll('button');
+			const divElements = document.querySelectorAll('div');
+			const ContainerElements = document.querySelectorAll('background');
+			const bodyElements = document.querySelectorAll('body');
+			
+			document.body.style.background = 'linear-gradient(to bottom, black 60%, rgb(16,16,32))';
+			//const xcontainer = document.getElementById('container');
+			//xcontainer.style.background = 'linear-gradient(to bottom, black 60%, black)';
+			//xcontainer.style.background = 'linear-gradient(to bottom, black 60%, black)';
+			
+			// Apply specific styles to popup, topbar, and buttons
+			popupElements.forEach(element => {
+				element.style.outline = '2px solid white';
+				element.style.backgroundColor = 'black';  // make div background black
+			});
+		
+			topbarElements.forEach(element => {
+				element.style.outline = '2px solid white';
+				element.style.backgroundColor = 'black';  // make div background black
+			});
+		
+			buttonElements.forEach(element => {
+				element.style.outline = '2px solid white';
+				element.style.backgroundColor = 'black';  // make button background black
+				element.style.color = 'white';  // make button text white
+			});
+			ContainerElements.forEach(element => {
+				element.style.outline = '2px solid white';
+				element.style.backgroundColor = 'black';
+			});
+			//bodyElements.forEach(element => {
+			//	element.style.outline = '2px solid white';
+			//	element.style.backgroundColor = 'black';
+			//});			
+			// Apply dark mode for divs
+			divElements.forEach(element => {
+				//console.log()
+				//element.style.backgroundColor = 'black';
+				//element.style.color = 'white';  // make div text white
+				element.style.color = "rgba(255,255,32,128);";
+			});
+			//color: rgba(255,255,32,128);
+		}
+
+
+		function ToggleDarkMode() {
+		if (IsDarkMode == false)
+			{
+				enableDarkMode();
+				fadeToDefault();
+			}
+		else
+			{
+				disableDarkMode();
+				fadeToDefault();
+			}
 		}
 
 
 
-
-
-
+	//my new standard false Dark-Mode:
+	window.onload = function() {
+		
+		ToggleDarkMode();
+		ToggleDarkMode();
+		
+	};
     </script>
 </body>  
 
