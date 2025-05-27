@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0">
   <channel>
-    <title>Website Title</title>
-    <link>https://www.example.com</link>
-    <description>Description of the website</description>
+    <title>IndieGameNews</title>
+    <link>indiegamenews.github.io/IndieGameNews</link>
+    <description>A website dedicated to news about indie gaming.</description>
     <item>
-      <title>Article Title</title>
-      <link>https://www.example.com/article</link>
-      <description>Description of the article</description>
+      <title>Beast and Cleaver - Grimes production</title>
+      <link>https://indiegamenews.github.io/IndieGameNews/?Page=8</link>
+      <description>05/26/2025</description>
     </item>
   </channel>
 </rss>
