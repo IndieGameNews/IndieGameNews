@@ -1,0 +1,13 @@
+Beast and Cleaver - Grimes production
+IndieGameNews 05/26/2025
+A little while ago I had the pleasure of being emailed by a fan; Jesse Pringle of Grime productions. Mr.Pringle has only recently taken up video game development "Before October of 2024, I had never touched a line of code in my life." having previously been an author and the creator of fatal factions; a digital card game (https://www.fatal-factions.com/). production of Beast and Cleaver began in October of 2024 as Mr.Pringle worked on the concept & design from a portable composition notebook, and was later digitzed into a game using the gamemaker studio engine "I spent 3-6 hours every single day after I would get home from work opening Game Maker Studio and failing over and over, watching 100's of how to guides on youtube and even resulting to Reddit posts for ounces of help if i could find it".
+
+Beast & Cleaver will be coming to PC and Steamdeck sometime toward the end of this year featuring full controller support and a 64 by 64 pixelated art-style. The games protagonist simply called "Butcher" is purposefully never stated in dialogue as a fan service. Mr.Pringle expressed that he did not want combat to be flashy suggesting the game heavily leans into this  aspect "a light attack combo, a heavy arcing slash, a throwable cleaver, and a simple dodge roll with a few I-Frames. These core mechanics mixed with 30+ different in-game enemies with 1-3 different attacks each lead to a learning curve similar to that of Dark Souls combat". Despite this he has made clear that it is not a souls-like game with a more natural and traditional progression curve.
+
+the game begins in a primary hub called "The Hanging City" and has 6 levels called biomes, where progression has been described to me as similiar to Gothic, defeat an enemy; open a new area; expand the primary hub where tasks are obtained from a quest board. the npcs he addresed to me are Vivian a heroine who's brother has been turned into a violent creature. Medesi a dwarf who's path is blocked by the undead, Kivari a climber who's path is blocked by a winged creature, and 5 others mentioned in passing.
+
+Something interesting of note is that the game the game has over 30 creatures with unique drops and spawn conditions, Mr.Pringle noted that this was inspired by his love for monster hunter and that each enemy has 2 drops, with one being common, and  the other a rarity based on RNG.
+
+it will release to demo on October 1st 2025. if you're a fan of Hollow Knight, Skyrim, Dead Cells, terraria, or monster hunter there might just be something in this title worth playing for you, but only time will tell.
+
+https://store.steampowered.com/app/3568030/Beast_and_Cleaver/
